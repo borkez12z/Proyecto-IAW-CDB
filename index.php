@@ -4,13 +4,11 @@
         <title>CDB ARAHAL</title>
     </head>
     <body>
-        <form action="" method="post">
             <h1>CDB ARAHAL</h1>
             <hr></hr>
-            <input type="submit" name="inscribir" value="INSCRIBIR JUGADOR"/>
-            <input type="submit" name="actualizar" value="ACTUALIZAR ESTADISTICAS JUGADOR"/>
-            <input type="submit" name="borrar" value="BORRAR JUGADOR"/>
-            <input type="submit" name="buscar" value="BUSCAR JUGADOR"/>
-        </form>
+            <button>INSCRIBIR JUGADOR</button>
+            <button>ACTUALIZAR ESTADISTICAS JUGADOR</button>
+            <button>BORRAR JUGADOR</button>
+            <a href="./informacion.php"><button>BUSCAR JUGADOR</button></a>
     <body>
 </html>
