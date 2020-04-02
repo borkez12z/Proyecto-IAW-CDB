@@ -6,9 +6,9 @@
     <body>
             <h1>CDB ARAHAL</h1>
             <hr></hr>
-            <button>INSCRIBIR JUGADOR</button>
+            <a href="./inscribirjugador.php"><button>INSCRIBIR JUGADOR</button></a>
             <button>ACTUALIZAR ESTADISTICAS JUGADOR</button>
-            <button>BORRAR JUGADOR</button>
-            <a href="./informacion.php"><button>BUSCAR JUGADOR</button></a>
+            <a href="./borrarjugador.php"><button>BORRAR JUGADOR</button></a>
+            <a href="./buscarposicion.php"><button>BUSCAR JUGADOR</button></a>
     <body>
 </html>
