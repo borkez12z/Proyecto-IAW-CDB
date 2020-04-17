@@ -6,7 +6,7 @@
         <h1>INSCRIBIR JUGADOR</h1>
         <form action="" method="POST">
             <label>Código Jugador: </label>
-            <input type="number" name="codigo" min="10" max="99"/>
+            <input type="number" name="codigo" min="19999" max="99999"/>
             <br>
             <label>Nombre: </label>
             <input type="text" name="nombre"/>
@@ -29,7 +29,7 @@
             <label>Posición: </label>
             <?php
                 include('conexionBD.php');
-                $datos=$base->prepare('SELECT PK_POSICION, NOMBRE FROM POSICION');
+                $datos=$base->prepare('SELECT CODIGO_POSICION, NOMBRE FROM POSICION');
                 $datos->execute();
                 while( $filas = $datos->fetch()){
             ?>

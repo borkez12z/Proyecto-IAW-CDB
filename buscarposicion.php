@@ -2,8 +2,8 @@
     <head></head>
     <body>
     <?php
-    include('conexionBD.php');
-    include('posicion.php');
+    require_once('conexionBD.php');
+    require_once('posicion.php');
     if (isset($_POST['buscar'])) {
         $posicion= $_POST['radio'];
         #echo $posicion;
@@ -21,7 +21,8 @@
     <form method="POST" action="">
     <label>POSICION</label>
     <?php
-        $datos=$base->prepare('SELECT PK_POSICION, NOMBRE FROM POSICION');
+        $conexion=new conexion();
+        $datos=$conexion->prepare('SELECT CODIGO_POSICION, NOMBRE FROM POSICION');
         $datos->execute();
         while( $filas = $datos->fetch()){
     ?>

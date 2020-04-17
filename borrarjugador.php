@@ -4,8 +4,8 @@
     </head>
     <body>
         <?php
-            include('conexionBD.php');
-            include('jugador.php');
+            require_once 'conexionBD.php';
+            require_once 'jugador.php';
             if (isset($_POST['borrar'])) {
                 $codigo= $_POST['borrar_jug'];
                 $elimina= new jugador();
@@ -17,11 +17,11 @@
             <select name="borrar_jug">
             <?php
             include('conexionBD.php');
-            $consul=$base->prepare('SELECT CODIGO_JUGADOR,NOMBRE from JUGADOR');
+            $consul=$base->prepare('SELECT ID_JUGADOR,NOMBRE from JUGADOR');
             $consul->execute();
             while($fila=$consul->fetch()){
             ?>
-            <option value="<?php echo $fila[0]?>"><?php echo $fila[0]. $fila[1] ?>
+            <option value="<?php echo $fila[0]?>"><?php echo $fila[0]." ".$fila[1] ?>
             <?php
             }
             ?>
