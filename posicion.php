@@ -45,9 +45,9 @@
             }
         }
 
-        //public function __destruct(){
+        public function posicion_destruct(){
         //    include('conexionBD.php');
-        //    mysqli::close($base);
-        //}
+            mysqli::close($conexion);
+        }
     }
 ?>

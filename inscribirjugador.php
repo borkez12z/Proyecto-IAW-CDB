@@ -3,6 +3,25 @@
         <meta CHARSET="UTF-8">
     </head>
     <body>
+        <?php
+        require_once 'conexionBD.php';
+        require_once 'jugador.php';
+        if (isset($_POST['inscribir'])) {
+            $codigo= $_POST['codigo'];
+            echo $codigo;
+            $nombre=$_POST['nombre'];
+            echo $nombre;
+            $anio=$_POST['anyo'];
+            echo $anio;
+            $nacionalidad=$_POST['nacionalidad'];
+            echo $nacionalidad;
+            $posi=$_POST['chex'];
+            echo $posi;
+            $inserta= new jugador($codigo,$nombre,$anio,$nacionalidad,$posi);
+            //$inserta= new jugador(23422,'rafael',1998,'macedonia',120);
+            $inserta->insertar();
+        }
+        ?>
         <h1>INSCRIBIR JUGADOR</h1>
         <form action="" method="POST">
             <label>Código Jugador: </label>
@@ -28,8 +47,8 @@
             <br>
             <label>Posición: </label>
             <?php
-                include('conexionBD.php');
-                $datos=$base->prepare('SELECT CODIGO_POSICION, NOMBRE FROM POSICION');
+                $conexion= new conexion();
+                $datos=$conexion->prepare('SELECT CODIGO_POSICION, NOMBRE FROM POSICION');
                 $datos->execute();
                 while( $filas = $datos->fetch()){
             ?>

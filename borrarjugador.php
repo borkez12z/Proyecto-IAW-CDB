@@ -16,8 +16,8 @@
             <label>Selecciona Jugador a Borrar</label>
             <select name="borrar_jug">
             <?php
-            include('conexionBD.php');
-            $consul=$base->prepare('SELECT ID_JUGADOR,NOMBRE from JUGADOR');
+            $conexion=new conexion();
+            $consul=$conexion->prepare('SELECT ID_JUGADOR,NOMBRE from JUGADOR');
             $consul->execute();
             while($fila=$consul->fetch()){
             ?>
