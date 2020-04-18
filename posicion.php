@@ -41,6 +41,7 @@
                 echo "Faltas Ultimo Partido: " .$fila[10];
                 echo "<br>";
                 echo "------------------------------";
+                echo "<br>";
             }
         }
 

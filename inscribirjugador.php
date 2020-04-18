@@ -7,6 +7,7 @@
         require_once 'conexionBD.php';
         require_once 'jugador.php';
         require_once 'estadistica.php';
+        require_once 'jugador_posicion.php';
         if (isset($_POST['inscribir'])) {
             $codigo= $_POST['codigo'];
             //echo $codigo;
@@ -24,6 +25,9 @@
             
             $inserta2 = new estadistica($codigo,0,0,0);
             $inserta2->insertar2();
+
+            $inserta3 = new jugpos($codigo,$posi);
+            $inserta3->insertar3();
         }
         ?>
         <h1>INSCRIBIR JUGADOR</h1>
@@ -63,6 +67,7 @@
             ?>
             <br><br>
             <input type="submit" name="inscribir" value="Inscribir Jugador"/>
+            <a href="./otraPosicion.php"><input type="button" name="nuevapos" value="Añadir Otra Posicion Jugador"/></a>
             <input type="reset" name="limpiar" value="Limpiar"/>
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
         </form>
