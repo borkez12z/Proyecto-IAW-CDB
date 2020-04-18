@@ -6,20 +6,24 @@
         <?php
         require_once 'conexionBD.php';
         require_once 'jugador.php';
+        require_once 'estadistica.php';
         if (isset($_POST['inscribir'])) {
             $codigo= $_POST['codigo'];
-            echo $codigo;
+            //echo $codigo;
             $nombre=$_POST['nombre'];
-            echo $nombre;
+            //echo $nombre;
             $anio=$_POST['anyo'];
-            echo $anio;
+            //echo $anio;
             $nacionalidad=$_POST['nacionalidad'];
-            echo $nacionalidad;
+            //echo $nacionalidad;
             $posi=$_POST['chex'];
-            echo $posi;
+            //echo $posi;
             $inserta= new jugador($codigo,$nombre,$anio,$nacionalidad,$posi);
             //$inserta= new jugador(23422,'rafael',1998,'macedonia',120);
             $inserta->insertar();
+            
+            $inserta2 = new estadistica($codigo,0,0,0);
+            $inserta2->insertar2();
         }
         ?>
         <h1>INSCRIBIR JUGADOR</h1>

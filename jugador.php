@@ -48,7 +48,7 @@
             $this->codigo_posicion=$codigo_posicion;
         }
 
-        public function jugador_construct($codigo_jugador,$nombrejug,$anonaci,$nacionalidad,$codigo_posicion) {
+        public function __construct($codigo_jugador,$nombrejug,$anonaci,$nacionalidad,$codigo_posicion) {
             $this->codigo_jugador=$codigo_jugador;
             $this->nombrejug=$nombrejug;
             $this->anonaci=$anonaci;

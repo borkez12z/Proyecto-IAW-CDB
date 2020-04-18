@@ -10,7 +10,6 @@
             $this->codigo_posicion=$codigo_posicion;
             $this->nombre=$nombre;
         }
-        
 
         public function buscar($codigo_posicion){
             $conexion = new conexion();

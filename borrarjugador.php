@@ -8,8 +8,8 @@
             require_once 'jugador.php';
             if (isset($_POST['borrar'])) {
                 $codigo= $_POST['borrar_jug'];
-                $elimina= new jugador();
-                $resp=$elimina->borrar($codigo);
+                $elimina= new jugador(0,0,0,0,0);
+                $elimina->borrar($codigo);
             }
         ?>
         <form action="" method="post">
