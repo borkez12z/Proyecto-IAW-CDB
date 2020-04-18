@@ -7,6 +7,38 @@
         private $faltasultimopartido;
         const estadist = 'estadisticas_jugador_up';
 
+        public function getIDjug(){
+            return $this->id_jugador;
+        }
+
+        public function getPuntos(){
+            return $this->puntosultimopartido;
+        }
+
+        public function getMinutos(){
+            return $this->minutosultimopartido;
+        }
+
+        public function getfaltas(){
+            return $this->faltasultimopartido;
+        }
+
+        public function setIDjug(){
+            $this->id_jugador=$id_jugador;
+        }
+
+        public function setPuntos(){
+            $this->puntosultimopartido=$puntosultimopartido;
+        }
+
+        public function setMinutos(){
+            $this->minutosultimopartido=$minutosultimopartido;
+        }
+
+        public function setFaltas(){
+            $this->faltasultimopartido=$faltasultimopartido;
+        }
+
         public function __construct($id_jugador,$puntosultimopartido,$minutosultimopartido,$faltasultimopartido){
             $this->id_jugador=$id_jugador;
             $this->puntosultimopartido=$puntosultimopartido;

@@ -21,7 +21,7 @@
             }
         ?>
     <form action="" method="post">
-            <label>Selecciona Jugador a Borrar</label>
+            <label>Seleccionar Jugador a Actualizar</label>
             <select name="act" required>
             <?php
             $conexion=new conexion();
