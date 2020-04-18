@@ -1,6 +1,12 @@
 <html>
     <head>
         <meta CHARSET="UTF-8">
+        <style>
+            body {
+                background-color: lightyellow;
+                margin: 0 auto;
+            }
+        </style>
     </head>
     <body>
         <?php
