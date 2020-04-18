@@ -6,6 +6,25 @@
                 background-color: lightyellow;
                 margin: 0 auto;
             }
+
+            h1 {
+                text-align: center;
+            }
+
+            form{
+                margin: auto;
+                width: 40%;
+                border: 3px solid #73AD21;
+                padding: 10px;
+            }
+
+            label{
+                border: 3px solid red;
+            }
+
+            input{
+                border: 3px solid green;
+            }
         </style>
     </head>
     <body>
