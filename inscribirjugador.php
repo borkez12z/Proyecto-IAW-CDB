@@ -11,7 +11,7 @@
                 width: 50%;
                 /*border: 3px solid #73AD21;*/
                 background-color: lightgreen;
-                height: 40%;
+                !height: 40%;
             }
 
             h1 {
@@ -80,7 +80,6 @@
             $inserta3 = new jugpos($codigo,$posi);
             $inserta3->insertar3();
         }*/
-
         if (isset($_POST['inscribir'])) {
             $codigo= $_POST['codigo'];
             $conexion= new conexion;

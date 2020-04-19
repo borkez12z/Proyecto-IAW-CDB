@@ -1,8 +1,50 @@
 <html>
     <head>
         <meta Charsert="UTF-8">
+        <style>
+            body {
+                margin: 0 auto;
+            }
+
+            #contenedor {
+                margin: 0 auto;
+                width: 50%;
+                /*border: 3px solid #73AD21;*/
+                background-color: lightyellow;
+                !height: 40%;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #formulario{
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+                border: solid 1px grey;
+            }
+
+            #botones{
+                width: 55%;
+                margin-left: 300px;
+                padding-bottom: 40px;
+                margin-top: 10px;
+            }
+
+            p{
+                text-align: center;
+            }
+
+            button{
+                width: 35%;
+                margin-left: 300px;
+            }
+            
+        </style>
     </head>
     <body>
+        <div id="contenedor">
         <?php
             session_start();
             require_once 'conexionBD.php';
@@ -18,15 +60,18 @@
                 //$_SESSION['faltas']=$_POST['faltas'];
                 $actualiza= new estadistica($codigo,$puntos,$minutos,$faltas);
                 $actualiza->actualizado();
-                echo "El jugador de Codigo $codigo, ha conseguido en el ultimo partido $puntos puntos, ha jugado $minutos minutos y ha cometido $faltas faltas."
         ?>
+                <p> El jugador de Codigo <?php echo $codigo ?>, ha conseguido en el ultimo partido <?php echo $puntos ?> puntos, ha jugado <?php echo $minutos ?> minutos y ha cometido <?php $faltas ?>faltas.</p>
                 <br>
                 <a href="./actualizarjugador.php"><button>Atras</button></a>
         <?php
             }else{
         ?>
+        <h1>ACTUALIZAR ESTADISTICAS ULTIMO PARTIDO</h1>
+        <br>
+        <div id="formulario">
         <form action="" method="post">
-            <label>Seleccionar Jugador a Actualizar</label>
+            <label><b>Seleccionar Jugador a Actualizar</b></label>
             <select name="act" required>
             <?php
             $conexion=new conexion();
@@ -39,21 +84,25 @@
             }
             ?>
             </select>
-            <br>
-            <label>PUNTOS ULTIMO PARTIDO: </label>
+            <br><br>
+            <label><b>PUNTOS ULTIMO PARTIDO:</b> </label>
             <input type="text" name="puntos" required/>
-            <br>
-            <label>MINUTOS ULTIMO PARTIDO: </label>
+            <br><br>
+            <label><b>MINUTOS ULTIMO PARTIDO:</b> </label>
             <input type="text" name="minutos" required/>
-            <br>
-            <label>FALTAS ULTIMO PARTIDO: </label>
+            <br><br>
+            <label><b>FALTAS ULTIMO PARTIDO:</b> </label>
             <input type="text" name="faltas" required/>
             <br>
+        </div>
+        <div id="botones">
             <input type="submit" name="actualizar" value="Actualizar Estadisticas"/>
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
+        </div>
         </form>  
         <?php
         }
         ?> 
+        </div>
     </body>
 </html>

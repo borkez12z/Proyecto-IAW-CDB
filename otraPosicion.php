@@ -10,10 +10,14 @@
                 width: 50%;
                 /*border: 3px solid #73AD21;*/
                 background-color: lightgreen;
-                height: 25%;
+                !height: 25%;
             }
 
             h1 {
+                text-align: center;
+            }
+
+            h2 {
                 text-align: center;
             }
 
@@ -44,6 +48,9 @@
 
         $inserta3 = new jugpos($jugador,$posicion);
         $inserta3->insertar3();
+    ?>
+        <h2>El jugador con Codigo <?php echo $jugador?> se ha registrado en su nueva Posicion</h2>
+    <?php
     }
     ?>
     <h1>NUEVA POSICION JUGADORES</h1>
