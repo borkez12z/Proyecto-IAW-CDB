@@ -6,21 +6,29 @@
         //public $base;
         const TABLA='posicion';
 
-        public function posicion__construct(){
+        public function getCodPosi(){
+            return $this->codigo_posicion;
+        }
+
+        public function getNombre(){
+            return $this->nombre;
+        }
+
+        public function setCodPosi(){
             $this->codigo_posicion=$codigo_posicion;
+        }
+
+        public function setNombre(){
             $this->nombre=$nombre;
         }
 
         public function buscar($codigo_posicion){
             $conexion = new conexion();
-            //include('conexionBD.php');
-            //$sql="SELECT * FROM posicion WHERE NOMBRE='" .$posicion."'";
             $sql=$conexion->prepare('SELECT * FROM jugador JOIN posicion JOIN estadisticas_jugador_up WHERE jugador.CODIGO_POSICION=posicion.CODIGO_POSICION AND jugador.ID_JUGADOR=estadisticas_jugador_up.ID_JUGADOR AND posicion.nombre= :codigo_posicion');
+            //$sql='SELECT * FROM jugador JOIN posicion JOIN estadisticas_jugador_up WHERE jugador.CODIGO_POSICION=posicion.CODIGO_POSICION AND jugador.ID_JUGADOR=estadisticas_jugador_up.ID_JUGADOR AND posicion.nombre= $codigo_posicion';
             $sql->bindParam(":codigo_posicion", $codigo_posicion);
             $sql->execute();
-            //$sql=execute();
-            //$busca=$base->query($sql);
-            #$respuesta=$busca->fetch_all(MYSQLI_ASSOC);
+            //$busca=$conexion->query($sql);
             while ($fila=$sql->fetch()) {
                 echo "Codigo Jugador: " .$fila[0];
                 echo "<br>";

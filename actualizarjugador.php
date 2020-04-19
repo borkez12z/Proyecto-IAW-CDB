@@ -18,9 +18,14 @@
                 //$_SESSION['faltas']=$_POST['faltas'];
                 $actualiza= new estadistica($codigo,$puntos,$minutos,$faltas);
                 $actualiza->actualizado();
-            }
+                echo "El jugador de Codigo $codigo, ha conseguido en el ultimo partido $puntos puntos, ha jugado $minutos minutos y ha cometido $faltas faltas."
         ?>
-    <form action="" method="post">
+                <br>
+                <a href="./actualizarjugador.php"><button>Atras</button></a>
+        <?php
+            }else{
+        ?>
+        <form action="" method="post">
             <label>Seleccionar Jugador a Actualizar</label>
             <select name="act" required>
             <?php
@@ -36,16 +41,19 @@
             </select>
             <br>
             <label>PUNTOS ULTIMO PARTIDO: </label>
-            <input type="text" name="puntos"/>
+            <input type="text" name="puntos" required/>
             <br>
             <label>MINUTOS ULTIMO PARTIDO: </label>
-            <input type="text" name="minutos"/>
+            <input type="text" name="minutos" required/>
             <br>
             <label>FALTAS ULTIMO PARTIDO: </label>
-            <input type="text" name="faltas"/>
+            <input type="text" name="faltas" required/>
             <br>
             <input type="submit" name="actualizar" value="Actualizar Estadisticas"/>
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
-        </form>   
+        </form>  
+        <?php
+        }
+        ?> 
     </body>
 </html>

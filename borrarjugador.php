@@ -10,7 +10,11 @@
                 $codigo= $_POST['borrar_jug'];
                 $elimina= new jugador(0,0,0,0,0);
                 $elimina->borrar($codigo);
-            }
+                echo "El Jugador de codigo $codigo ha sido eliminado correctamente.";
+        ?>
+                <a href="./borrarjugador.php"><button>Atrás</button></a>
+        <?php
+            }else{
         ?>
         <form action="" method="post">
             <label>Selecciona Jugador a Borrar</label>
@@ -31,4 +35,7 @@
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
         </form>
     <body>
+        <?php
+            }
+        ?>
 </html>

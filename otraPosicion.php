@@ -1,7 +1,40 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            body {
+                margin: 0 auto;
+            }
+
+            #contenedor {
+                margin: 0 auto;
+                width: 50%;
+                /*border: 3px solid #73AD21;*/
+                background-color: lightgreen;
+                height: 25%;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #formulario{
+                margin: auto;
+                width: 70%;
+                padding: 10px;
+                border: solid 1px grey;
+            }
+
+            #botones{
+                width: 55%;
+                margin-left: 350px;
+                padding-bottom: 40px;
+                margin-top: -10px;
+            }
+        </style>
+    </head>
 
     <body>
+    <div id="contenedor">
     <?php
     require_once 'conexionBD.php';
     require_once 'jugador_posicion.php';
@@ -14,8 +47,9 @@
     }
     ?>
     <h1>NUEVA POSICION JUGADORES</h1>
+    <div id="formulario">
     <form action="" method="post">
-            <label>Selecciona jugador al que añadirle nueva posicion: </label>
+            <label><b>Selecciona jugador al que añadirle nueva posicion: </b></label>
             <select name="act" required>
             <?php
             $conexion=new conexion();
@@ -28,8 +62,8 @@
             }
             ?>
             </select>
-            <br>
-            <label>Elegir nueva posicion Jugador: </label>
+            <br><br>
+            <label><b>Elegir nueva posicion Jugador: </b></label>
             <?php
                 $conexion=new conexion();
                 $datos=$conexion->prepare('SELECT CODIGO_POSICION, NOMBRE FROM POSICION');
@@ -41,8 +75,12 @@
             <?php
                  }
             ?>
+    </div>
+        <div id="botones">
             <br>
-            <input type="submit" name="inscribir" value="Inscribir Jugador"/>
+            <input type="submit" name="inscribir" value="Nueva Posicion"/>
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
+        </div>
+    </form>
     </body>
 </html>
