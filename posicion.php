@@ -30,6 +30,7 @@
             $sql->execute();
             //$busca=$conexion->query($sql);
             while ($fila=$sql->fetch()) {
+        
                 echo "Codigo Jugador: " .$fila[0];
                 echo "<br>";
                 echo "Nombre: " .$fila[1];
