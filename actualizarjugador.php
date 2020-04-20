@@ -1,50 +1,10 @@
 <html>
     <head>
         <meta Charsert="UTF-8">
-        <style>
-            body {
-                margin: 0 auto;
-            }
-
-            #contenedor {
-                margin: 0 auto;
-                width: 50%;
-                /*border: 3px solid #73AD21;*/
-                background-color: lightyellow;
-                !height: 40%;
-            }
-
-            h1 {
-                text-align: center;
-            }
-
-            #formulario{
-                margin: auto;
-                width: 60%;
-                padding: 10px;
-                border: solid 1px grey;
-            }
-
-            #botones{
-                width: 55%;
-                margin-left: 300px;
-                padding-bottom: 40px;
-                margin-top: 10px;
-            }
-
-            p{
-                text-align: center;
-            }
-
-            button{
-                width: 35%;
-                margin-left: 300px;
-            }
-            
-        </style>
+        <link rel="StyleSheet" href="./css/estilo.css" type="text/css" />
     </head>
     <body>
-        <div id="contenedor">
+        <div id="contenedoractu">
         <?php
             session_start();
             require_once 'conexionBD.php';
@@ -69,7 +29,7 @@
         ?>
         <h1>ACTUALIZAR ESTADISTICAS ULTIMO PARTIDO</h1>
         <br>
-        <div id="formulario">
+        <div id="formularioactu">
         <form action="" method="post">
             <label><b>Seleccionar Jugador a Actualizar</b></label>
             <select name="act" required>
@@ -86,16 +46,16 @@
             </select>
             <br><br>
             <label><b>PUNTOS ULTIMO PARTIDO:</b> </label>
-            <input type="text" name="puntos" required/>
+            <input type="number" name="puntos" min="0" max="200" required/>
             <br><br>
             <label><b>MINUTOS ULTIMO PARTIDO:</b> </label>
-            <input type="text" name="minutos" required/>
+            <input type="number" name="minutos" min="0" max="40" required/>
             <br><br>
             <label><b>FALTAS ULTIMO PARTIDO:</b> </label>
-            <input type="text" name="faltas" required/>
+            <input type="number" name="faltas" min="0" max="6" required/>
             <br>
         </div>
-        <div id="botones">
+        <div id="botonesactu">
             <input type="submit" name="actualizar" value="Actualizar Estadisticas"/>
             <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
         </div>

@@ -1,59 +1,10 @@
 <html>
     <head>
         <meta CHARSET="UTF-8">
-        <style>
-            body {
-                margin: 0 auto;
-            }
-
-            #contenedor {
-                margin: 0 auto;
-                width: 50%;
-                /*border: 3px solid #73AD21;*/
-                background-color: lightgreen;
-                !height: 40%;
-            }
-
-            h1 {
-                text-align: center;
-            }
-
-            #formulario{
-                margin: auto;
-                width: 60%;
-                padding: 10px;
-                border: solid 1px grey;
-            }
-
-            label{
-                
-            }
-
-            #botones{
-                width: 55%;
-                margin-left: 200px;
-                padding-bottom: 40px;
-                margin-top: -30px;
-            }
-
-            button{
-                width: 35%;
-                margin-left: 300px;
-            }
-
-            h3 {
-                text-align: center;
-            }
-
-            #lab{
-                width: 40%;
-                !border: 3px solid #73AD21;
-                margin-left: 300px;
-            }
-        </style>
+        <link rel="StyleSheet" href="./css/estilo.css" type="text/css" />
     </head>
     <body>
-    <div id="contenedor">
+    <div id="contenedorinscribir">
         <?php
         require_once 'conexionBD.php';
         require_once 'jugador.php';
@@ -108,7 +59,7 @@
                 $inserta3->insertar3();
             ?>
                 <h3>Nuevo Fichaje</h3>
-                <div id="lab">
+                <div id="labinscribir">
                 <label><b>Nombre:</b><?php echo "$nombre"?></label>
                 <br>
                 <label><b>Año Nacimiento:</b><?php echo "$anio"?></label>
@@ -125,7 +76,7 @@
         }else{
         ?>
         <h1>INSCRIBIR JUGADOR</h1>
-        <div id=formulario>
+        <div id=formularioinscribir>
         <form action="" method="POST">
             <label><b>Código Jugador:</b> </label>
             <input type="number" name="codigo" min="19999" max="99999" required/>
@@ -162,7 +113,7 @@
             ?>
             </div>
             <br><br>
-            <div id="botones">
+            <div id="botonesinscribir">
             <input type="submit" name="inscribir" value="Inscribir Jugador"/>
             <a href="./otraPosicion.php"><input type="button" name="nuevapos" value="Añadir Otra Posicion Jugador"/></a>
             <input type="reset" name="limpiar" value="Limpiar"/>

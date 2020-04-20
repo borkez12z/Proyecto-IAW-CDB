@@ -1,37 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <style>
-            body {
-                margin: 0 auto;
-            }
-
-            #contenedor {
-                margin: 0 auto;
-                width: 50%;
-                /*border: 3px solid #73AD21;*/
-                background-color: #AC9EFC;
-                !height: 40%;
-            }
-
-            h1 {
-                text-align: center;
-            }
-
-            #formulario{
-                margin: auto;
-                width: 60%;
-                padding: 10px;
-                border: solid 1px grey;
-            }
-
-            #botones{
-                width: 55%;
-                margin-left: 400px;
-                padding-bottom: 40px;
-                margin-top: 10px;
-            }
-        </style>
+        <link rel="StyleSheet" href="./css/estilo.css" type="text/css" />
     </head>
     <body>
         <div id="contenedor">

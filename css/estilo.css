@@ -1,0 +1,151 @@
+body {
+       margin: 0 auto;
+}
+
+#contenedor {
+	margin: 0 auto;
+	width: 400px;
+	/*border: 3px solid #73AD21;*/
+	background-color: #AC9EFC;
+	!height: 40%;
+}
+
+h1 {
+	text-align: center;
+}
+
+#formulario{
+	margin: auto;
+	width: 150px;
+	padding: 10px;
+	margin-left: 100px;
+	border: solid 1px grey;
+}
+
+#botones{
+	width: 300px;
+	margin-left: 70px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+}
+
+button{
+	width: 100px;
+	margin-left: 200px;
+}
+
+#contenedorinscribir {
+	margin: 0 auto;
+	width: 700px;
+	/*border: 3px solid #73AD21;*/
+	background-color: lightgreen;
+	!height: 40%;
+}
+
+#formularioinscribir{
+	margin: auto;
+	width: 500px;
+	padding: 10px;
+	border: solid 1px grey;
+}
+
+label{
+	
+}
+
+#botonesinscribir{
+	width: 500px;
+	margin-left: 110px;
+	padding-bottom: 40px;
+	margin-top: -30px;
+	!border: solid 1px grey;
+}
+
+
+h3 {
+	text-align: center;
+}
+
+#labinscribir{
+	width: 40%;
+	!border: 3px solid #73AD21;
+	margin-left: 300px;
+}
+
+#contenedoractu {
+	margin: 0 auto;
+	width: 800px;
+	/*border: 3px solid #73AD21;*/
+	background-color: lightyellow;
+	!height: 40%;
+}
+
+#formularioactu{
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+	border: solid 1px grey;
+}
+
+#botonesactu{
+	width: 500px;
+	margin-left: 250px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	!border: solid 1px grey;
+}
+
+p{
+	text-align: center;
+}
+
+#contenedorborrar {
+	margin: 0 auto;
+	width: 500px;
+	/*border: 3px solid #73AD21;*/
+	background-color: #FC9A85;
+	!height: 40%;
+}
+
+#formularioborrar{
+	margin: auto;
+	width: 400px;
+	padding: 10px;
+	border: solid 1px grey;
+	text-align: center;
+}
+
+#botonesborrar{
+	width: 250px;
+	margin-left: 150px;
+	padding-bottom: 40px;
+	!margin-top: 10px;
+	!border: solid 1px grey;
+}
+
+h2 {
+	text-align: center;
+}
+
+#contenedorotra {
+	margin: 0 auto;
+	width: 800px;
+	/*border: 3px solid #73AD21;*/
+	background-color: lightgreen;
+	!height: 25%;
+}
+
+#formulariootra{
+	margin: auto;
+	width: 670px;
+	padding: 10px;
+	border: solid 1px grey;
+}
+
+#botonesotra{
+	width: 450px;
+	margin-left: 300px;
+	padding-bottom: 40px;
+	margin-top: -10px;
+	!border: solid 1px grey;
+}
