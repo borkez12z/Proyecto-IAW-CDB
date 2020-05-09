@@ -24,13 +24,14 @@
 
         public function buscar($codigo_posicion){
             $conexion = new conexion();
-            $sql=$conexion->prepare('SELECT * FROM jugador JOIN posicion JOIN estadisticas_jugador_up WHERE jugador.CODIGO_POSICION=posicion.CODIGO_POSICION AND jugador.ID_JUGADOR=estadisticas_jugador_up.ID_JUGADOR AND posicion.nombre= :codigo_posicion');
+            $sql=$conexion->prepare('SELECT * FROM jugador JOIN posicion JOIN jugador_posicion 
+                                        WHERE jugador.ID_JUGADOR=jugador_posicion.ID_JUGADOR AND posicion.CODIGO_POSICION=jugador_posicion.CODIGO_POSICION AND posicion.nombre= :codigo_posicion');
             //$sql='SELECT * FROM jugador JOIN posicion JOIN estadisticas_jugador_up WHERE jugador.CODIGO_POSICION=posicion.CODIGO_POSICION AND jugador.ID_JUGADOR=estadisticas_jugador_up.ID_JUGADOR AND posicion.nombre= $codigo_posicion';
             $sql->bindParam(":codigo_posicion", $codigo_posicion);
             $sql->execute();
             //$busca=$conexion->query($sql);
             while ($fila=$sql->fetch()) {
-        
+                echo "---------------------------";
                 echo "Codigo Jugador: " .$fila[0];
                 echo "<br>";
                 echo "Nombre: " .$fila[1];
@@ -42,14 +43,6 @@
                 echo "Codigo Posicion: " .$fila[5];
                 echo "<br>";
                 echo "Nombre Posicion: " .$fila[6];
-                echo "<br>";
-                echo "Puntos Ultimo Partido: " .$fila[8];
-                echo "<br>";
-                echo "Minutos Ultimo Partido: " .$fila[9];
-                echo "<br>";
-                echo "Faltas Ultimo Partido: " .$fila[10];
-                echo "<br>";
-                echo "------------------------------";
                 echo "<br>";
             }
         }

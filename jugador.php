@@ -56,7 +56,7 @@
             $this->codigo_posicion=$codigo_posicion;
         }
 
-        public function borrar($codigo_jugador){
+        static function borrar($codigo_jugador){
             $conexion=new conexion;
             $eliminar= $conexion->prepare('DELETE FROM jugador where id_jugador= :codigo_jugador');
             $eliminar->bindParam(":codigo_jugador", $codigo_jugador);

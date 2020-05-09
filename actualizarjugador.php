@@ -11,17 +11,29 @@
             require_once 'estadistica.php';
             if (isset($_POST['actualizar'])) {
                 $codigo= $_POST['act'];
-                $puntos= $_POST['puntos'];
-                $minutos= $_POST['minutos'];
-                $faltas= $_POST['faltas'];
-                //$_SESSION['codigo']=$_POST['act'];
-                //$_SESSION['puntos']=$_POST['puntos'];
-                //$_SESSION['minutos']=$_POST['minutos'];
-                //$_SESSION['faltas']=$_POST['faltas'];
-                $actualiza= new estadistica($codigo,$puntos,$minutos,$faltas);
-                $actualiza->actualizado();
+                $conexion= new conexion;
+                $consulta=$conexion->prepare("SELECT * from estadisticas_jugador_up where id_jugador=$codigo");
+                $consulta-> execute();
+                $res=$consulta->rowCount();
+
+                if ($res != 0){
+                    $codigo= $_POST['act'];
+                    $puntos= $_POST['puntos'];
+                    $minutos= $_POST['minutos'];
+                    $faltas= $_POST['faltas'];
+                    //echo $codigo, $puntos, $minutos, $faltas;
+                    $actualiza= new estadistica($codigo,$puntos,$minutos,$faltas);
+                    $actualiza->actualizado();  
+                }else{
+                    $codigo= $_POST['act'];
+                    $puntos= $_POST['puntos'];
+                    $minutos= $_POST['minutos'];
+                    $faltas= $_POST['faltas'];
+                    $inserta2 = new estadistica($codigo,$puntos,$minutos,$faltas);
+                    $inserta2->insertar2();
+                }
         ?>
-                <p> El jugador de Codigo <?php echo $codigo ?>, ha conseguido en el ultimo partido <?php echo $puntos ?> puntos, ha jugado <?php echo $minutos ?> minutos y ha cometido <?php $faltas ?>faltas.</p>
+                <p> El jugador de Codigo <?php echo $codigo ?>, ha conseguido en el ultimo partido <?php echo $puntos ?> puntos, ha jugado <?php echo $minutos ?> minutos y ha cometido <?php echo $faltas ?> faltas.</p>
                 <br>
                 <a href="./actualizarjugador.php"><button>Atras</button></a>
         <?php

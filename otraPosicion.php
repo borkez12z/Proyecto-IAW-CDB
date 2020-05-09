@@ -1,8 +1,8 @@
 <html>
     <head>
-    <link rel="StyleSheet" href="./css/estilo.css" type="text/css" />
+        <meta charset="UTF-8">
+        <link rel="StyleSheet" href="./css/estilo.css" type="text/css" />
     </head>
-
     <body>
     <div id="contenedorotra">
     <?php

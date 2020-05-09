@@ -12,7 +12,7 @@
 
             #contenedor {
                 margin: 0 auto;
-                width: 50%;
+                width: 700px;
                 /*border: 3px solid #73AD21;*/
                 background-color: lightblue;
             }
@@ -41,9 +41,9 @@
             
             #fecha {
                 !border: 3px solid #73AD21;
-                width: 20%;
+                width: 100px;
                 text-align: center;
-                margin-left: 375px;
+                margin-left: 300px;
             }
         </style>
     </head>

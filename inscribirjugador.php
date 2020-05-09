@@ -52,9 +52,6 @@
                 //$inserta= new jugador(23422,'rafael',1998,'macedonia',120);
                 $inserta->insertar();
 
-                $inserta2 = new estadistica($codigo,0,0,0);
-                $inserta2->insertar2();
-
                 $inserta3 = new jugpos($codigo,$posi);
                 $inserta3->insertar3();
             ?>
@@ -107,7 +104,7 @@
                 while( $filas = $datos->fetch()){
             ?>
                 <label><?php echo $filas[1] ?></label>
-                <input type="checkbox" name="chex" value="<?php echo $filas[0] ?>"/>
+                <input type="radio" name="chex" value="<?php echo $filas[0] ?>"/>
             <?php
                 }
             ?>
