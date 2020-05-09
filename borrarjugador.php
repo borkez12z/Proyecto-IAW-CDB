@@ -10,8 +10,9 @@
             require_once 'jugador.php';
             if (isset($_POST['borrar'])) {
                 $codigo= $_POST['borrar_jug'];
-                $elimina= new jugador(0,0,0,0,0);
-                $elimina->borrar($codigo);
+                //$elimina= new jugador(0,0,0,0,0);
+                //$elimina->borrar($codigo);
+                jugador::borrar($codigo);
         ?>
                 <h2>El Jugador de codigo <?php echo $codigo ?> ha sido eliminado correctamente</h2>
                 <br>

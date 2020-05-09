@@ -18,7 +18,6 @@
         #$resultado->buscarporposicion($posicion);
         ?>
         <br>
-        <!--<a href="./buscarposicion.php"><input type="button" name="Volver" value="Volver Atras"/></a>-->
     <?php
     }else{}
     ?>
@@ -42,6 +41,7 @@
     <div id="botones">
     <input type="submit" name="buscar" value="BUSCAR"/>
     <a href="./index.php"><input type="button" name="Volver" value="Volver a inicio"/></a>
+    <a href="./buscarposicion.php"><input type="button" name="limpiar" value="Limpiar"/></a>
     </div>
     </form>
     <?php
